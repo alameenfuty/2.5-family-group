@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#092f27">
+<title>2.5 FAMILY | Together We Grow</title>
+<style>
+:root{--green:#0b3b2e;--green2:#116149;--gold:#f2c14e;--cream:#f7f5ed;--ink:#14231e;--muted:#66736d;--white:#fff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6}
+header{background:var(--green);color:white;position:sticky;top:0;z-index:10;box-shadow:0 4px 18px #0002}
+.nav{max-width:1120px;margin:auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:.5px}
+.logo{width:46px;height:46px;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-weight:900;font-size:15px}
+.brand small{display:block;font-weight:500;color:#d7e8df;font-size:11px;letter-spacing:1.5px}
+nav{display:flex;gap:22px;align-items:center}
+nav a{color:#fff;text-decoration:none;font-size:14px;font-weight:700}
+nav a:hover{color:var(--gold)}
+.menu-btn{display:none;background:transparent;color:white;border:1px solid #ffffff70;padding:7px 10px;border-radius:8px}
+.hero{background:linear-gradient(125deg,#082c23 0%,#0e5740 65%,#1a7052 100%);color:#fff;overflow:hidden}
+.hero-inner{max-width:1120px;margin:auto;padding:76px 22px 82px;display:grid;grid-template-columns:1.25fr .75fr;align-items:center;gap:35px}
+.eyebrow{display:inline-block;color:var(--gold);font-weight:800;letter-spacing:2px;text-transform:uppercase;font-size:12px}
+h1{font-size:clamp(42px,7vw,76px);line-height:1.02;margin:17px 0 18px;letter-spacing:-2px}
+h1 span{color:var(--gold)}
+.hero p{font-size:18px;color:#e1eee8;max-width:620px;margin-bottom:28px}
+.buttons{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;justify-content:center;align-items:center;text-decoration:none;border:0;border-radius:10px;padding:13px 20px;font-weight:800;cursor:pointer;font-size:14px}
+.btn-gold{background:var(--gold);color:#183329}
+.btn-outline{border:1px solid #ffffff80;color:#fff;background:transparent}
+.hero-badge{margin:auto;width:min(310px,100%);aspect-ratio:1;border-radius:50%;border:1px solid #f2c14e90;display:grid;place-items:center;background:radial-gradient(circle,#ffffff10,#ffffff03 60%);position:relative}
+.hero-badge:before,.hero-badge:after{content:"";position:absolute;border:1px solid #f2c14e55;border-radius:50%;inset:18px}
+.hero-badge:after{inset:36px}
+.badge-text{text-align:center;z-index:1}
+.badge-text strong{display:block;font-size:72px;line-height:1;color:var(--gold);letter-spacing:-4px}
+.badge-text span{font-size:15px;font-weight:900;letter-spacing:4px}
+.badge-text small{display:block;color:#d8e8e0;letter-spacing:2px;margin-top:8px}
+section{padding:72px 22px}
+.container{max-width:1050px;margin:auto}
+.section-head{text-align:center;max-width:700px;margin:0 auto 35px}
+.section-head .eyebrow{color:var(--green2)}
+h2{font-size:clamp(28px,4vw,42px);line-height:1.15;margin:9px 0 12px;color:var(--green)}
+.section-head p{color:var(--muted);margin:0}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:#fff;padding:25px;border-radius:17px;border:1px solid #e4e8e1;box-shadow:0 8px 25px #153d2d08}
+.icon{width:48px;height:48px;border-radius:13px;background:#e8f3ed;display:grid;place-items:center;font-size:24px;margin-bottom:14px}
+.card h3{margin:0 0 7px;color:var(--green)}
+.card p{margin:0;color:var(--muted);font-size:14px}
+.join-section{background:#e9efe8}
+.join-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:30px;align-items:start}
+.join-copy{background:var(--green);color:white;border-radius:18px;padding:30px;position:sticky;top:90px}
+.join-copy h2{color:white}
+.join-copy p{color:#dce9e2}
+.join-copy li{margin:10px 0;color:#e6f1eb}
+.form-card{background:#fff;border-radius:18px;padding:30px;box-shadow:0 10px 30px #123e2c0d}
+.form-card h3{margin-top:0;color:var(--green);font-size:24px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field.full{grid-column:1/-1}
+label{font-size:13px;font-weight:800;color:#34483e}
+input,select,textarea{font:inherit;border:1px solid #d7dfd8;border-radius:9px;padding:12px 13px;width:100%;background:#fcfdfb;color:var(--ink);outline:none}
+input:focus,select:focus,textarea:focus{border-color:var(--green2);box-shadow:0 0 0 3px #11614918}
+textarea{resize:vertical;min-height:105px}
+.hint{font-size:12px;color:var(--muted);margin:12px 0}
+.submit{width:100%;margin-top:10px;background:#16834f;color:white;padding:15px}
+.submit:hover{background:#0d6a3e}
+.contact{background:var(--green);color:white;text-align:center}
+.contact h2{color:white}
+.contact p{color:#d8e7df}
+.contact-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:22px}
+.contact .btn-outline{border-color:#ffffff80}
+footer{background:#06251d;color:#c9d9d1;text-align:center;padding:22px;font-size:13px}
+footer strong{color:var(--gold)}
+.whatsapp-float{position:fixed;right:18px;bottom:18px;background:#20bd62;color:#fff;text-decoration:none;padding:13px 17px;border-radius:50px;font-weight:800;box-shadow:0 6px 20px #0003;z-index:20}
+@media(max-width:760px){
+nav{display:none;position:absolute;left:0;right:0;top:74px;background:var(--green);padding:18px 22px 22px;flex-direction:column;align-items:flex-start}
+nav.open{display:flex}.menu-btn{display:block}
+.hero-inner{grid-template-columns:1fr;padding-top:58px;text-align:center}
+.hero p{margin-left:auto;margin-right:auto}.buttons{justify-content:center}
+.hero-badge{width:230px;grid-row:1}
+.badge-text strong{font-size:60px}
+.cards{grid-template-columns:1fr}
+.join-layout{grid-template-columns:1fr}
+.join-copy{position:static}
+section{padding:55px 18px}
+.form-card{padding:22px}
+}
+@media(max-width:480px){.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.brand{font-size:14px}.logo{width:40px;height:40px}}
+</style>
+</head>
+<body>
+<header>
+<div class="nav">
+<a class="brand" href="#home" style="color:white;text-decoration:none">
+<span class="logo">2.5</span>
+<span>2.5 FAMILY<small>TOGETHER WE GROW</small></span>
+</a>
+<button class="menu-btn" onclick="document.querySelector('nav').classList.toggle('open')" aria-label="Open menu">☰ Menu</button>
+<nav>
+<a href="#home" onclick="closeMenu()">Home</a>
+<a href="#about" onclick="closeMenu()">About Us</a>
+<a href="#activities" onclick="closeMenu()">Our Focus</a>
+<a href="#register" onclick="closeMenu()">Register</a>
+<a href="#contact" onclick="closeMenu()">Contact Us</a>
+</nav>
+</div>
+</header>
+
+<main>
+<section class="hero" id="home">
+<div class="hero-inner">
+<div>
+<span class="eyebrow">One family • One vision • One future</span>
+<h1>Welcome to<br><span>2.5 FAMILY</span></h1>
+<p>A community built on unity, learning, self-development and helping young people move towards a brighter future.</p>
+<div class="buttons">
+<a class="btn btn-gold" href="#register">Join the Family →</a>
+<a class="btn btn-outline" href="#about">Learn About Us</a>
+</div>
+</div>
+<div class="hero-badge" aria-label="2.5 Family badge">
+<div class="badge-text"><strong>2.5</strong><span>FAMILY</span><small>GROW • LEARN • SUPPORT</small></div>
+</div>
+</div>
+</section>
+
+<section id="about">
+<div class="container">
+<div class="section-head">
+<span class="eyebrow">Who we are</span>
+<h2>More than a name. A community.</h2>
+<p>2.5 FAMILY is a growing community for people who want to connect, learn, share ideas and encourage one another. We believe that small steps, taken together, can create meaningful progress.</p>
+</div>
+<div class="cards">
+<article class="card"><div class="icon">🤝</div><h3>Unity & Support</h3><p>Build positive connections, respect one another and share useful
